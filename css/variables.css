@@ -1,0 +1,58 @@
+:root {
+  --__color-dark: #171717;
+  --__color-dark--lighter: color-mix(in srgb, var(--__color-dark), white 5%);
+  --__color-dark--darker: color-mix(in srgb, var(--__color-dark), black 25%);
+
+  --__color-light: #efefef;
+  --__color-light--lighter: color-mix(in srgb, var(--__color-light), white 90%);
+  --__color-light--darker: color-mix(in srgb, var(--__color-light), black 25%);
+
+  --color-primary: #0077aa;
+  --color-primary--lighter: color-mix(in srgb, var(--color-primary), white 20%);
+  --color-primary--darker: color-mix(in srgb, var(--color-primary), black 20%);
+
+  --color-danger: #aa0000;
+  --color-danger--lighter: color-mix(in srgb, var(--color-danger), white 20%);
+  --color-danger--darker: color-mix(in srgb, var(--color-danger), black 20%);
+
+  --color-warn: #ffaa00;
+  --color-warn--lighter: color-mix(in srgb, var(--color-warn), white 20%);
+  --color-warn--darker: color-mix(in srgb, var(--color-warn), black 20%);
+
+  --color-success: #118800;
+  --color-success--lighter: color-mix(in srgb, var(--color-success), white 20%);
+  --color-success--darker: color-mix(in srgb, var(--color-success), black 20%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-back: var(--__color-dark);
+    --color-back--lighter: var(--__color-dark--lighter);
+    --color-back--darker: var(--__color-dark--darker);
+
+    --color-front: var(--__color-light);
+    --color-front--lighter: var(--__color-light--lighter);
+    --color-front--darker: var(--__color-light--darker);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-back: var(--__color-light);
+    --color-back--lighter: var(--__color-light--darker);
+    --color-back--darker: var(--__color-light--lighter);
+
+    --color-front: var(--__color-dark);
+    --color-front--lighter: var(--__color-dark--darker);
+    --color-front--darker: var(--__color-dark--lighter);
+  }
+}
+
+:root {
+  --scrollbar-width: 0.5rem;
+  --transition: 0.3s ease-in-out;
+  --radius: calc(1rem / 2);
+
+  background-color: var(--color-back);
+  color: var(--color-front);
+}
